@@ -5,6 +5,7 @@ async function init() {
   console.log(urlParams.get('url'));
   const frame = document.getElementById('mainFrame');
   frame.setAttribute("src", urlParams.get('url'));
+  frame.style.visibility = 'visible';
   
 	
   try {
