@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>PWA App</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="pwa.css">    
+    <script type="text/javascript" src="pwa.js"></script>
+  </head>
+
+  <body>		
+    <div class="container">
+      <iframe src="www.google.com" id="mainFrame" frameborder="0" allowfullscreen></iframe>
+      <div class="controls">
+        <button type="button" class="button" onclick="sendMessage();">Exit</button>        
+        <button type="button" class="button" onclick="window.location.reload();">Reload</button> 
+      </div>
+    </div>
+  </body>  
+  
+</html>
