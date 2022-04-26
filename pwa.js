@@ -2,10 +2,18 @@ async function init() {
   
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);        
-  console.log(urlParams.get('url'));
+
   const frame = document.getElementById('mainFrame');
   frame.setAttribute("src", urlParams.get('url'));
   frame.style.visibility = 'visible';
+  
+  const led_string = urlParams.get('led');
+  if (led_string != null){
+    LED_SEQUENCE = led_string.split('');
+    console.log(LED_SEQUENCE);
+  } else {
+    console.log(LED_SEQUENCE);
+  }
   
 	
   try {
@@ -26,7 +34,7 @@ const colors = ['Green', 'Yellow', 'Red', 'Off'];
 
 const delay = 200; 
 
-const LED_SEQUENCE = [0,1,3,2,3,2,1,0];
+let LED_SEQUENCE = [0,1,3,2,3,2,1,0];
 
 function setLedColor(color){
 
