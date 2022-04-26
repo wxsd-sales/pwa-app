@@ -54,9 +54,9 @@ async function setLedMode(mode){
 }
 
 
-async function sendMessage(){
+async function exitPWA(){
 
-  console.log('LED Test Pressed')
+  console.log('Exiting PWA')
 
   LED_SEQUENCE.forEach((color, i) => {
     setTimeout(() => {
@@ -66,15 +66,19 @@ async function sendMessage(){
   
 }
 
-const exit = document.getElementById('exit');
-exit.addEventListener('click', async function(e) {
 
-  console.log('Attempting to exit');
+function openModal() {
+  console.log('Open Modal');
+  document.getElementById("prompt").style.display = "block"; 
+}
 
-  try{     
-   sendMessage();
-  } catch (e) {
-   console.log('Error exiting');
+function closeModal() {
+  console.log('Close Modal');
+  document.getElementById("prompt").style.display = "none";  
+}
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById("prompt")) {
+    document.getElementById("prompt").style.display = "none";
   }
-   
-});
+}
