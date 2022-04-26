@@ -15,13 +15,12 @@ async function init() {
     console.log(LED_SEQUENCE);
   }
   
-	
   try {
-		xapi = await getXAPI();
+    xapi = await getXAPI();
     console.log('xapi object recevied');
-	} catch (e) {
-		console.log('Could not connect');
-	}
+  } catch (e) {
+    console.log('Could not connect');
+  }
 
 }
 
